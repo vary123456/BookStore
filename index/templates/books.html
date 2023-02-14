@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>书籍名单查询结果</title>
+    {% for book in books %}
+        <p>名称：{{ book.title }}, 出版社：{{ book.public }} </p>
+        {% empty %}
+            查询不到该书籍
+    {% endfor %}
+</head>
+<body>
+
+</body>
+</html>

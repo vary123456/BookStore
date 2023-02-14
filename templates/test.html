@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title123</title>
+        <p>网站名字是{{ name }}</p> //字典查询
+        <p> 课程包含{{ course.1 }}</p> //索引查询
+        <p> 变量a是{{ b }}  <p>
+        <p> a['address']是{{b.address}}  </p>//字典查询
+        <p> 函数fuction：{{ test_hello }}</p> //函数方法调用
+        <p> 类实例化对象：{{class_obj.Web_name}} </p> //类方法调用
+
+    {% if x > 0 %}
+        <h2>{{ x }}是大于0的</h2>
+    {% elif x == 0 %}
+        <h3>{{ x }}是等于0的</h3>
+    {% elif x < 0 %}
+        <h4>{{ x }}是小于0的</h4>
+    {% endif %}
+
+    <p>
+        {% if name == "CCC" %}
+            name=CCC输出语句1
+        {% elif name == "C语言中文网" %}
+            name={{ name|join:"abbbb"}}
+        {% endif %}
+    </p>
+
+    {% for item in course %}
+        <li>
+            {{ forloop.counter }} : {{ item }}
+            {% if forloop.last %}
+                输出完成
+            {% endif %}
+        </li>
+    {% empty %}
+        course不存在
+    {% endfor %}
+
+    {% if sense %}
+        sense: {{ sense|truncatewords:2 }}
+    {% endif %}
+
+    <p>
+    输出value:
+    </p>
+    {{ value|dictsort:"num"}}
+
+    <p>id: {{ id }}</p>
+</head>
+<body>
+
+</body>
+</html>

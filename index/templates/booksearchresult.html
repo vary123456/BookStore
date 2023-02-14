@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>书籍搜索结果</title>
+</head>
+<body>
+    {% for book in booklist %}
+      <p>{{ book.title }}</p>
+    {% empty %}
+        <p>查询无结果</p>
+    {% endfor %}
+</body>
+</html>

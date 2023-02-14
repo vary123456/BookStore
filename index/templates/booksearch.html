@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查找书籍</title>
+</head>
+
+<body>
+  <form action="/index/booksearchresult/" method="post">    <!-- 网址前加slash表示绝对路径，不加表示相对路径 -->
+    <!-- 防止 CSRF 攻击-->
+    {% csrf_token %}
+    {{ booksearchform }}
+<!--    {% for formitem in booksearchform %}-->
+<!--      <p>-->
+<!--          {{ formitem.label }} : {{ formitem }}-->
+<!--      </p>-->
+<!--    {% endfor %}-->
+    <input type="submit" value="提交">
+  </form>
+</body>
+</html>

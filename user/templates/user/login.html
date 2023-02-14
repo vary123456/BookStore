@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Login</title>
+</head>
+<body>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ userform }}
+        <input type="submit" value="登陆">
+    </form>
+    {% if not user %}
+    请登陆
+    {% else %}
+    欢迎您 ：{{ user.username }}
+    {% endif %}
+
+
+
+{% if perm %}
+    权限：{{ perm.index.add_book }}
+{% endif %}
+
+</body>
+</html>

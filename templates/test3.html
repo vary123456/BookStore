@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test3</title>
+    <p>it is test3</p>
+    {% load index_tags %}
+    <p>id1: {% addstr_tag 'AAABB' %}</p>
+    <p>id2: {% ta1 '123' %}</p>
+    <p>id3: {{ text1 }}</p>
+
+    <p>
+        {% for v in value %}
+            {% ifchanged %}
+                {{ v.name }}
+            {% endifchanged %}
+        {% endfor %}
+
+        {# 这是一个注释 #}
+        {% comment %}
+            这是一些注释1111
+        {% endcomment %}
+
+        {% comment %}
+            ...要被注释的内容放在两个标签中间
+        {% endcomment %}
+    </p>
+
+
+</head>
+<body>
+
+</body>
+</html>

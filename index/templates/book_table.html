@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>书籍信息表</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>id</th>
+        <th>title</th>
+        <th>price</th>
+        <th>retail_price</th>
+        <th>public</th>
+        <th>option</th>
+    </tr>
+    {% for book in booklist %}
+    <tr>
+        <td>{{ book.id }}</td>
+        <td>{{ book.title }}</td>
+        <td>{{ book.price }}</td>
+        <td>{{ book.retail_price }}</td>
+        <td>{{ book.public.name }}</td>
+        <td>
+            <a href="/index/update_book/{{ book.id }}">更新</a>
+            <a href="/index/delete_book/{{ book.id }}">删除</a>
+        </td>
+    </tr>
+    {% empty %}
+        <tr>
+            <td>无数据</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    {% endfor %}
+    </table>
+    <p></p>
+    <form action="" method="post">    <!-- 网址前加slash表示绝对路径，不加表示相对路径 -->
+    <!-- 防止 CSRF 攻击-->
+    {% csrf_token %}
+    <input type="text" name="book_name" value="{{ book_name }}">
+    <input type="submit" value="查询书籍">
+    </form>
+
+</body>
+</html>
