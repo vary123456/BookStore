@@ -1,3 +1,5 @@
+# it is test for git commit
+# commit second 20230214-2
 # def score_grade(score):
 #     if not isinstance(score,int):
 #         raise TypeError("你应该输入一个整数类型")
